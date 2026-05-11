@@ -33,9 +33,6 @@ export default function CompanyShell() {
       <div className="page-sweep" aria-hidden="true" />
 
       <header className="site-header" aria-label="サイトヘッダー">
-        <a className="floating-logo" href="/#top" aria-label="DESIGN JUNGLE トップへ">
-          <img src="/images/design-jungle-logo-mark.png" alt="DESIGN JUNGLE" />
-        </a>
         <button
           className="menu-button"
           type="button"
