@@ -16,7 +16,7 @@ export default function SiteShell() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const delay = window.sessionStorage.getItem("dj-loaded") ? 250 : 1800;
+    const delay = window.sessionStorage.getItem("dj-loaded") ? 1750 : 2300;
     window.sessionStorage.setItem("dj-loaded", "true");
     const timer = window.setTimeout(() => setIsLoaded(true), delay);
     return () => window.clearTimeout(timer);
@@ -53,9 +53,11 @@ export default function SiteShell() {
   return (
     <>
       <div className={`loader ${isLoaded ? "is-hidden" : ""}`} aria-hidden="true">
+        <span className="loader__beam" />
         <div className="loader__mark">
           <img src="/images/design-jungle-logo-mark.png" alt="" />
         </div>
+        <p className="loader__caption">DESIGN THE STRUCTURE.</p>
       </div>
 
       <header className="site-header" aria-label="サイトヘッダー">
