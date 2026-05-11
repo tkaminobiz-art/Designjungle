@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 
 const navItems = [
-  ["TOP", "#top"],
-  ["MESSAGE", "#message"],
-  ["SERVICE", "#service"],
-  ["GROUP", "#group"],
-  ["COMPANY", "#company"],
-  ["CONTACT", "#contact"],
+  ["TOP", "/#top"],
+  ["MESSAGE", "/#message"],
+  ["SERVICE", "/#service"],
+  ["GROUP", "/#group"],
+  ["COMPANY", "/company"],
+  ["CONTACT", "/#contact"],
 ];
 
 export default function SiteShell() {
@@ -59,7 +59,7 @@ export default function SiteShell() {
       </div>
 
       <header className="site-header" aria-label="サイトヘッダー">
-        <a className="floating-logo" href="#top" aria-label="DESIGN JUNGLE トップへ">
+        <a className="floating-logo" href="/#top" aria-label="DESIGN JUNGLE トップへ">
           <img src="/images/design-jungle-logo-mark.png" alt="DESIGN JUNGLE" />
         </a>
         <button
@@ -292,42 +292,6 @@ export default function SiteShell() {
           </div>
         </section>
 
-        <section className="company" id="company">
-          <div className="inner">
-            <div className="section-head section-head--center">
-              <p className="section-head__main reveal">COMPANY</p>
-              <h2 className="section-head__sub reveal">会社概要</h2>
-            </div>
-            <table className="company-table reveal">
-              <tbody>
-                <tr>
-                  <th>会社名</th>
-                  <td>デザインジャングル株式会社</td>
-                </tr>
-                <tr>
-                  <th>所在地</th>
-                  <td>奈良県奈良市三条町475番地 松田ビル2F（YAMATOBASE）</td>
-                </tr>
-                <tr>
-                  <th>設立</th>
-                  <td>2026年4月17日</td>
-                </tr>
-                <tr>
-                  <th>代表者</th>
-                  <td>松田 慎平</td>
-                </tr>
-                <tr>
-                  <th>事業内容</th>
-                  <td>広告代理事業、SNS運用代行、コミュニティ運営、通販事業、ブランディング支援</td>
-                </tr>
-                <tr>
-                  <th>グループ会社</th>
-                  <td>株式会社奈良ランド</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
       </main>
 
       <footer className="footer" id="contact">

@@ -119,6 +119,36 @@ a {
   height: auto;
 }
 
+.page-sweep {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  pointer-events: none;
+  background: var(--deep);
+  transform-origin: left;
+  animation: page-sweep 1.05s cubic-bezier(0.86, 0, 0.07, 1) 0.18s forwards;
+}
+
+.page-sweep::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 100%;
+  background: var(--lime);
+  box-shadow: 0 0 32px rgba(214, 225, 45, 0.62);
+}
+
+@keyframes page-sweep {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
 .floating-logo img {
   height: 100%;
   object-fit: cover;
@@ -1010,6 +1040,172 @@ a {
   padding: 130px 0 60px;
 }
 
+.company-page {
+  overflow: hidden;
+  background: #fff;
+}
+
+.company-hero {
+  position: relative;
+  display: grid;
+  min-height: 82vh;
+  place-items: end start;
+  overflow: hidden;
+  padding: 170px 0 86px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(214, 225, 45, 0.16), transparent 26%),
+    radial-gradient(circle at 18% 72%, rgba(228, 54, 31, 0.14), transparent 24%),
+    linear-gradient(135deg, #080808 0%, #161616 48%, #050505 100%);
+}
+
+.company-hero::before {
+  content: "DESIGN JUNGLE";
+  position: absolute;
+  right: -0.08em;
+  bottom: -0.22em;
+  color: rgba(255, 255, 255, 0.035);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(86px, 18vw, 300px);
+  font-weight: 700;
+  line-height: 0.82;
+  white-space: nowrap;
+}
+
+.company-hero__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(90deg, #fff 1px, transparent 1px),
+    linear-gradient(#fff 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 72%, transparent);
+}
+
+.company-hero__line {
+  position: absolute;
+  width: 46vw;
+  height: 2px;
+  background: var(--lime);
+  transform: rotate(-18deg);
+  box-shadow: 0 0 28px rgba(214, 225, 45, 0.52);
+}
+
+.company-hero__line--one {
+  top: 24%;
+  left: -10vw;
+}
+
+.company-hero__line--two {
+  right: -18vw;
+  bottom: 30%;
+  background: var(--red);
+  box-shadow: 0 0 28px rgba(228, 54, 31, 0.42);
+}
+
+.company-hero__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.company-hero__eyebrow {
+  margin: 0 0 24px;
+  color: var(--lime);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.company-hero h1 {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(78px, 14vw, 190px);
+  font-weight: 700;
+  line-height: 0.86;
+}
+
+.company-hero h1 span {
+  display: block;
+}
+
+.company-hero__lead {
+  width: min(620px, 100%);
+  margin: 34px 0 0;
+  font-size: clamp(20px, 2.2vw, 31px);
+  font-weight: 700;
+}
+
+.company-profile {
+  position: relative;
+  padding: 120px 0 80px;
+  background:
+    linear-gradient(90deg, rgba(16, 16, 16, 0.06) 1px, transparent 1px),
+    #fff;
+  background-size: 56px 56px;
+}
+
+.company-profile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(42vw, 520px);
+  height: 18px;
+  background: var(--lime);
+}
+
+.company-profile__grid {
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  gap: 8%;
+  align-items: start;
+}
+
+.company-profile__intro {
+  position: sticky;
+  top: 120px;
+}
+
+.company-profile__number {
+  margin: 0 0 22px;
+  color: var(--lime);
+  -webkit-text-stroke: 1px var(--deep);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(74px, 9vw, 130px);
+  font-weight: 700;
+  line-height: 0.88;
+}
+
+.company-profile__intro h2 {
+  margin: 0 0 24px;
+  font-size: clamp(28px, 3.4vw, 48px);
+  line-height: 1.18;
+}
+
+.company-profile__intro p:last-child {
+  margin: 0;
+  font-weight: 700;
+}
+
+.company-profile__table-wrap {
+  position: relative;
+  padding: 24px;
+  background: var(--deep);
+}
+
+.company-profile__table-wrap::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  width: 54%;
+  height: 54%;
+  border: 2px solid var(--lime);
+  z-index: -1;
+}
+
 .company-table {
   width: min(960px, 100%);
   margin: 0 auto;
@@ -1036,6 +1232,29 @@ a {
 .company-table td {
   width: 70%;
   color: var(--deep);
+}
+
+.company-table--page {
+  width: 100%;
+  border-top-color: rgba(255, 255, 255, 0.22);
+}
+
+.company-table--page th,
+.company-table--page td {
+  border-bottom-color: rgba(255, 255, 255, 0.22);
+  padding: 26px 18px;
+}
+
+.company-table--page th {
+  color: var(--lime);
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.03em;
+}
+
+.company-table--page td {
+  color: #fff;
+  font-size: clamp(15px, 1.5vw, 18px);
 }
 
 .footer {
@@ -1253,6 +1472,25 @@ a {
     padding-block: 86px;
   }
 
+  .company-hero {
+    min-height: 72vh;
+    padding: 150px 0 70px;
+  }
+
+  .company-profile {
+    padding: 82px 0 58px;
+  }
+
+  .company-profile__grid {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .company-profile__intro {
+    position: relative;
+    top: auto;
+  }
+
   .footer {
     grid-template-columns: 1fr;
   }
@@ -1313,6 +1551,23 @@ a {
 
   .company-table td {
     padding-top: 4px;
+  }
+
+  .company-hero {
+    min-height: 68svh;
+  }
+
+  .company-hero h1 {
+    font-size: clamp(62px, 17vw, 92px);
+  }
+
+  .company-profile__table-wrap {
+    padding: 18px;
+  }
+
+  .company-profile__table-wrap::before {
+    top: -10px;
+    right: -10px;
   }
 
   .group-card {
