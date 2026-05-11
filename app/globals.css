@@ -1027,8 +1027,9 @@ a {
 
 .group-card h3 {
   margin: 0 0 20px;
-  font-size: clamp(30px, 4vw, 54px);
+  font-size: clamp(30px, 3.3vw, 48px);
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .group-card p:last-child {
@@ -1454,6 +1455,7 @@ a {
   .origin__text p,
   .group__lead {
     font-size: 18px;
+    line-height: 2.05;
   }
 
   .service-row,
@@ -1551,6 +1553,16 @@ a {
 
   .company-table td {
     padding-top: 4px;
+  }
+
+  .message__text,
+  .origin__text p,
+  .service-row p,
+  .group__lead,
+  .group-card p:last-child,
+  .company-profile__intro p:last-child,
+  .company-table {
+    line-height: 2.05;
   }
 
   .company-hero {
