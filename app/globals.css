@@ -1390,6 +1390,12 @@ body.menu-open .liquid-cursor {
 }
 
 @media (max-width: 900px) {
+  .loader__video {
+    object-fit: contain;
+    object-position: center;
+    background: #050505;
+  }
+
   .floating-logo {
     top: 16px;
     left: 18px;
