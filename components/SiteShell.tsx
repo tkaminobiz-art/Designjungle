@@ -14,11 +14,13 @@ const navItems = [
 export default function SiteShell() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isReturning, setIsReturning] = useState(false);
 
   useEffect(() => {
-    const delay = window.sessionStorage.getItem("dj-loaded") ? 1750 : 2300;
+    const hasLoaded = window.sessionStorage.getItem("dj-loaded") === "true";
+    setIsReturning(hasLoaded);
     window.sessionStorage.setItem("dj-loaded", "true");
-    const timer = window.setTimeout(() => setIsLoaded(true), delay);
+    const timer = window.setTimeout(() => setIsLoaded(true), hasLoaded ? 2800 : 6200);
     return () => window.clearTimeout(timer);
   }, []);
 
@@ -52,12 +54,18 @@ export default function SiteShell() {
 
   return (
     <>
-      <div className={`loader ${isLoaded ? "is-hidden" : ""}`} aria-hidden="true">
-        <span className="loader__beam" />
-        <div className="loader__mark">
-          <img src="/images/design-jungle-logo-mark.png" alt="" />
-        </div>
-        <p className="loader__caption">DESIGN THE STRUCTURE.</p>
+      <div className={`loader ${isReturning ? "loader--returning" : ""} ${isLoaded ? "is-hidden" : ""}`} aria-hidden="true">
+        <video
+          className="loader__video"
+          src="/videos/opening-design-jungle.mp4"
+          poster="/videos/opening-design-jungle-poster.jpg"
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          onEnded={() => setIsLoaded(true)}
+        />
+        <img className="loader__fallback" src="/images/design-jungle-logo-mark.png" alt="" />
       </div>
 
       <header className="site-header" aria-label="サイトヘッダー">
