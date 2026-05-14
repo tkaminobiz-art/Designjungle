@@ -20,9 +20,13 @@ export default function SiteShell() {
     const hasLoaded = window.sessionStorage.getItem("dj-loaded") === "true";
     setIsReturning(hasLoaded);
     window.sessionStorage.setItem("dj-loaded", "true");
-    const timer = window.setTimeout(() => setIsLoaded(true), hasLoaded ? 2800 : 6200);
+    const timer = window.setTimeout(() => setIsLoaded(true), hasLoaded ? 6800 : 7800);
     return () => window.clearTimeout(timer);
   }, []);
+
+  const finishOpening = () => {
+    window.setTimeout(() => setIsLoaded(true), 950);
+  };
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", isMenuOpen);
@@ -63,7 +67,7 @@ export default function SiteShell() {
           muted
           playsInline
           preload="auto"
-          onEnded={() => setIsLoaded(true)}
+          onEnded={finishOpening}
         />
         <img className="loader__fallback" src="/images/design-jungle-logo-mark.png" alt="" />
       </div>
