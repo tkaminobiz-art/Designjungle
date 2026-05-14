@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import LiquidCursor from "./LiquidCursor";
 
 const navItems = [
   ["TOP", "/#top"],
@@ -30,9 +31,13 @@ export default function CompanyShell() {
 
   return (
     <>
+      <LiquidCursor />
       <div className="page-sweep" aria-hidden="true" />
 
       <header className="site-header" aria-label="サイトヘッダー">
+        <a className="floating-logo" href="/#top" aria-label="Design Jungle トップへ">
+          <img src="/images/design-jungle-logo-transparent.png" alt="Design Jungle" />
+        </a>
         <button
           className="menu-button"
           type="button"
@@ -47,7 +52,7 @@ export default function CompanyShell() {
         <div className="site-menu" id="site-menu" aria-hidden={!isMenuOpen}>
           <nav className="site-menu__inner" aria-label="グローバルナビゲーション">
             <div className="site-menu__brand" aria-hidden="true">
-              <img src="/images/design-jungle-logo-mark.png" alt="" />
+              <img src="/images/design-jungle-logo-transparent.png" alt="" />
             </div>
             <ul>
               {navItems.map(([label, href]) => (
@@ -107,7 +112,7 @@ export default function CompanyShell() {
       <footer className="footer" id="contact">
         <div className="footer__left">
           <div className="footer__logo">
-            <img src="/images/design-jungle-logo-mark.png" alt="DESIGN JUNGLE" />
+            <img src="/images/design-jungle-logo-transparent.png" alt="DESIGN JUNGLE" />
           </div>
           <p className="footer__address">
             〒630-8244
