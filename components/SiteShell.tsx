@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import LiquidCursor from "./LiquidCursor";
+import MobileScrollEffects from "./MobileScrollEffects";
 
 const navItems = [
   ["TOP", "/#top"],
@@ -95,6 +96,7 @@ export default function SiteShell() {
   return (
     <>
       <LiquidCursor />
+      <MobileScrollEffects />
       <div className={`loader ${isReturning ? "loader--returning" : ""} ${isLoaded ? "is-hidden" : ""}`} aria-hidden="true">
         <video
           className="loader__video"

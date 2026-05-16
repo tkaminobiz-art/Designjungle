@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import LiquidCursor from "./LiquidCursor";
+import MobileScrollEffects from "./MobileScrollEffects";
 
 const navItems = [
   ["TOP", "/#top"],
@@ -67,6 +68,7 @@ export default function CompanyShell() {
   return (
     <>
       <LiquidCursor />
+      <MobileScrollEffects />
       <div className="page-sweep" aria-hidden="true" />
 
       <header className="site-header" aria-label="サイトヘッダー">
