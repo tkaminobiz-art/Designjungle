@@ -335,7 +335,7 @@ export default function SiteShell() {
             </div>
             <div className="group-card reveal">
               <p className="group-card__eyebrow">COMMUNITY PROJECT</p>
-              <h3>株式会社奈良ランド</h3>
+              <h3>奈良ランド</h3>
               <p>
                 奈良県を中心としたオンラインコミュニティの企画・運営を通じて、事業者、インフルエンサー、地域の挑戦をつなぐプロジェクトです。
               </p>
