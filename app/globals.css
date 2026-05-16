@@ -116,6 +116,15 @@ body.menu-open .liquid-cursor {
   line-height: 0;
   filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.58));
   pointer-events: auto;
+  transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+}
+
+.floating-logo.is-hidden,
+body.menu-open .floating-logo {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  pointer-events: none;
 }
 
 .floating-logo img,

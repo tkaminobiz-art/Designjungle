@@ -16,6 +16,7 @@ export default function SiteShell() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isReturning, setIsReturning] = useState(false);
+  const [isFloatingLogoHidden, setIsFloatingLogoHidden] = useState(true);
 
   useEffect(() => {
     const hasLoaded = window.sessionStorage.getItem("dj-loaded") === "true";
@@ -57,6 +58,40 @@ export default function SiteShell() {
     return () => revealObserver.disconnect();
   }, []);
 
+  useEffect(() => {
+    const watchedSections = Array.from(document.querySelectorAll(".hero, .footer"));
+    if (watchedSections.length === 0) {
+      setIsFloatingLogoHidden(false);
+      return;
+    }
+
+    const visibility = new Map<Element, boolean>();
+    const updateLogoState = () => {
+      setIsFloatingLogoHidden(Array.from(visibility.values()).some(Boolean));
+    };
+
+    watchedSections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      visibility.set(section, rect.bottom > 0 && rect.top < window.innerHeight);
+    });
+    updateLogoState();
+
+    const logoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visibility.set(entry.target, entry.isIntersecting);
+        });
+        updateLogoState();
+      },
+      {
+        threshold: 0.04,
+      },
+    );
+
+    watchedSections.forEach((section) => logoObserver.observe(section));
+    return () => logoObserver.disconnect();
+  }, []);
+
   return (
     <>
       <LiquidCursor />
@@ -75,7 +110,7 @@ export default function SiteShell() {
       </div>
 
       <header className="site-header" aria-label="サイトヘッダー">
-        <a className="floating-logo" href="/#top" aria-label="Design Jungle トップへ">
+        <a className={`floating-logo ${isFloatingLogoHidden ? "is-hidden" : ""}`} href="/#top" aria-label="Design Jungle トップへ">
           <img src="/images/design-jungle-logo-transparent.png" alt="Design Jungle" />
         </a>
         <button
