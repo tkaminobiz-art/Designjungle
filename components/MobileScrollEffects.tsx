@@ -6,8 +6,6 @@ const activeTargets = [
   ".message",
   ".service-row",
   ".origin",
-  ".group",
-  ".group-card",
   ".company-hero",
   ".company-profile",
   ".footer",

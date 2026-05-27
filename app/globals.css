@@ -1013,51 +1013,6 @@ body.menu-open .floating-logo {
   line-height: 1.9;
 }
 
-.group {
-  padding: 140px 0;
-  color: #fff;
-  background: var(--deep);
-}
-
-.group__inner {
-  display: grid;
-  grid-template-columns: 46% 44%;
-  gap: 10%;
-  align-items: center;
-}
-
-.group__lead {
-  margin: 42px 0 0;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.group-card {
-  border: 2px solid var(--lime);
-  padding: clamp(38px, 4.2vw, 56px);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.group-card__eyebrow {
-  margin: 0 0 22px;
-  color: var(--lime);
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(15px, 1.2vw, 18px);
-  font-weight: 700;
-}
-
-.group-card h3 {
-  margin: 0 0 28px;
-  font-size: clamp(30px, 2.7vw, 40px);
-  line-height: 1.28;
-  white-space: nowrap;
-}
-
-.group-card p:last-child {
-  margin-bottom: 0;
-  font-weight: 700;
-}
-
 .company {
   padding: 130px 0 60px;
 }
@@ -1482,7 +1437,6 @@ body.menu-open .floating-logo {
 
   .mobile-motion-ready .message,
   .mobile-motion-ready .origin,
-  .mobile-motion-ready .group,
   .mobile-motion-ready .company-profile,
   .mobile-motion-ready .service-row {
     position: relative;
@@ -1491,7 +1445,6 @@ body.menu-open .floating-logo {
 
   .mobile-motion-ready .message::before,
   .mobile-motion-ready .origin::before,
-  .mobile-motion-ready .group::before,
   .mobile-motion-ready .company-profile::before,
   .mobile-motion-ready .service-row::before {
     content: "";
@@ -1510,7 +1463,6 @@ body.menu-open .floating-logo {
 
   .mobile-motion-ready .message.is-mobile-active::before,
   .mobile-motion-ready .origin.is-mobile-active::before,
-  .mobile-motion-ready .group.is-mobile-active::before,
   .mobile-motion-ready .company-profile.is-mobile-active::before,
   .mobile-motion-ready .service-row.is-mobile-active::before {
     opacity: 0.88;
@@ -1518,13 +1470,11 @@ body.menu-open .floating-logo {
   }
 
   .mobile-motion-ready .service-video,
-  .mobile-motion-ready .group-card,
   .mobile-motion-ready .company-profile__table-wrap {
     transition: transform 0.78s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.78s ease, outline-color 0.78s ease;
   }
 
   .mobile-motion-ready .service-row.is-mobile-active .service-video,
-  .mobile-motion-ready .group-card.is-mobile-active,
   .mobile-motion-ready .company-profile.is-mobile-active .company-profile__table-wrap {
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
     outline-color: rgba(214, 225, 45, 0.72);
@@ -1599,8 +1549,7 @@ body.menu-open .floating-logo {
 
   .site-menu__inner,
   .message__inner,
-  .origin__grid,
-  .group__inner {
+  .origin__grid {
     grid-template-columns: 1fr;
   }
 
@@ -1623,8 +1572,7 @@ body.menu-open .floating-logo {
   }
 
   .message__text,
-  .origin__text p,
-  .group__lead {
+  .origin__text p {
     font-size: 18px;
     line-height: 2.05;
   }
@@ -1640,7 +1588,6 @@ body.menu-open .floating-logo {
   }
 
   .origin,
-  .group,
   .company {
     padding-block: 86px;
   }
@@ -1757,8 +1704,6 @@ body.menu-open .floating-logo {
   .message__text,
   .origin__text p,
   .service-row p,
-  .group__lead,
-  .group-card p:last-child,
   .company-profile__intro p:last-child,
   .company-table {
     line-height: 2.05;
@@ -1817,12 +1762,4 @@ body.menu-open .floating-logo {
     right: -10px;
   }
 
-  .group-card {
-    padding: 32px 24px;
-  }
-
-  .group-card h3 {
-    font-size: clamp(25px, 7vw, 34px);
-    line-height: 1.35;
-  }
 }

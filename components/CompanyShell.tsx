@@ -8,7 +8,6 @@ const navItems = [
   ["TOP", "/#top"],
   ["MESSAGE", "/#message"],
   ["SERVICE", "/#service"],
-  ["GROUP", "/#group"],
   ["COMPANY", "/company"],
   ["CONTACT", "/#contact"],
 ];
@@ -19,7 +18,6 @@ const companyRows = [
   ["設立", "2026年4月17日"],
   ["代表者", "松田 慎平"],
   ["事業内容", "広告代理事業、SNS運用代行、コミュニティ運営、通販事業、ブランディング支援"],
-  ["グループ会社", "奈良ランド"],
 ];
 
 export default function CompanyShell() {

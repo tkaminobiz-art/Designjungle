@@ -8,7 +8,6 @@ const navItems = [
   ["TOP", "/#top"],
   ["MESSAGE", "/#message"],
   ["SERVICE", "/#service"],
-  ["GROUP", "/#group"],
   ["COMPANY", "/company"],
   ["CONTACT", "/#contact"],
 ];
@@ -319,27 +318,6 @@ export default function SiteShell() {
               </p>
               <p className="reveal">
                 「ジャングル」は、多様なものが混ざり合い、それぞれの個性を生かしながら、ひとつの生態系をつくる場所です。事業、人、地域の動きが交差し、新しい価値が育っていく場所でありたいと考えています。その想いを、社名に込めています。
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="group" id="group">
-          <div className="inner group__inner">
-            <div>
-              <div className="section-head section-head--light">
-                <p className="section-head__main reveal">GROUP</p>
-                <h2 className="section-head__sub reveal">グループ事業</h2>
-              </div>
-              <p className="group__lead reveal">
-                デザインジャングル株式会社を中心に、地域コミュニティ、SNS、通販、ブランディング支援を段階的に展開します。
-              </p>
-            </div>
-            <div className="group-card reveal">
-              <p className="group-card__eyebrow">COMMUNITY PROJECT</p>
-              <h3>奈良ランド</h3>
-              <p>
-                奈良県を中心としたオンラインコミュニティの企画・運営を通じて、事業者、インフルエンサー、地域の挑戦をつなぐプロジェクトです。
               </p>
             </div>
           </div>
